@@ -1,7 +1,9 @@
 import { useState, useEffect, useRef } from "react";
+import { Routes, Route, useNavigate, useLocation } from "react-router-dom";
 import "./App.css";
 import { User, Mail, Briefcase, Terminal, BookOpen, FileText, Trash2, NotebookText, Save, X, Trash } from "lucide-react";
 import Background from "./components/Background";
+import About from "./pages/About";
 
 function App() {
   const [activeWindow, setActiveWindow] = useState(null);
@@ -14,6 +16,8 @@ function App() {
   const [currentNoteTitle, setCurrentNoteTitle] = useState("");
   const [showSaveDialog, setShowSaveDialog] = useState(false);
   const notepadTextareaRef = useRef(null);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   // Desktop icons as seen in the images
   const desktopIcons = [
@@ -102,7 +106,11 @@ function App() {
   };
 
   const openWindow = (window) => {
-    setActiveWindow(window);
+    if (window === "About") {
+      navigate("/about");
+    } else {
+      setActiveWindow(window);
+    }
     setStartMenuOpen(false);
     
     // Reset notepad content when opening a new notepad
@@ -110,6 +118,11 @@ function App() {
       setNotepadContent("");
       setCurrentNoteTitle("");
     }
+  };
+
+  // Return to desktop from any page
+  const handleReturnToDesktop = () => {
+    navigate("/");
   };
 
   const toggleStartMenu = () => {
@@ -201,6 +214,11 @@ function App() {
         </div>
       </div>
     );
+  }
+
+  // If we're on a specific page route, render that page
+  if (location.pathname === "/about") {
+    return <About onClose={handleReturnToDesktop} />;
   }
 
   // Render active window content based on which window is open
