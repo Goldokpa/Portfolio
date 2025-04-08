@@ -8,7 +8,7 @@ const About = ({ onClose }) => {
       <div className="about-container">
         <div className="about-header">
           <h1 className="about-name">Gold Ogike Emmanuel Okpa</h1>
-          <div className="about-question">How can AI's benevolence shape humanity's harmony?</div>
+          <div className="about-question">In what profound ways might the goodwill of artificial intelligence guide humanity toward a more harmonious and enlightened existence?</div>
         </div>
 
         <div className="about-content">
@@ -38,12 +38,15 @@ const About = ({ onClose }) => {
               </p>
               
               <p>
-                Most recently, I built an Ai Agent that's used Orthopedic care at <a href="#">Clinix Ai</a>.
+                Most recently, I built an Ai Agent that is used for Orthopedic care at <a href="#">Clinix Ai</a>.
               </p>
               
               <p>
-                Shortly before that, I aligned my skills to support an enthusiastic team building towards 
-                revolutionizing the use of Technology processes among young Nigerians at <a href="https://3mtt.nitda.gov.ng/" target="_blank" rel="noopener noreferrer">3MTT</a>.
+              Just prior to that, I aligned my expertise with a passionate team dedicated to transforming how young Nigerians engage with technological innovation <a href="https://3mtt.nitda.gov.ng/" target="_blank" rel="noopener noreferrer">3MTT</a>.
+              </p>
+
+              <p> 
+                I also have experience in management and leadership roles where i was leading teams and driving projects to success at <a href="#">Betigol Company Ltd</a>.
               </p>
               
               <p>
